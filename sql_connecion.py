@@ -1,15 +1,11 @@
 import os
 from dotenv import load_dotenv
-
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_community.utilities import SQLDatabase
 
-
-
 load_dotenv()
 assert os.getenv("OPENAI_API_KEY")
-
 
 db = SQLDatabase.from_uri(
     "mysql+mysqlconnector://root:root@localhost:3306/mydatabase"
